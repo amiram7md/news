@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:news/SearchFeature.dart';
 
 import 'CategoryDetails.dart';
 
@@ -47,7 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     size: 35,
                   ),
                   onPressed: () {
-
+                    showSearch(context: context,
+                        delegate: SearchFeature());
                   },
                 ),
               ],

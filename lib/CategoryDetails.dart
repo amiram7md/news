@@ -10,7 +10,6 @@ class CategoryDetails extends StatefulWidget {
   static const routeName = 'CategoryDetails';
 
   CategoryDetails(this._categoryItem);
-
   CategoryItem _categoryItem;
 
   @override
@@ -111,14 +110,14 @@ class TabItem extends StatelessWidget{
 
 class NewsList extends StatelessWidget{
   Sources? sources ;
-  String? searchQuery;
-  NewsList({this.sources, this.searchQuery});
+  String? query;
+  NewsList({this.sources, this.query});
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
         child: FutureBuilder<NewsResponses>(
-            future: APIFunctions.loadNews(sources?.id,searchQuery),
+            future: APIFunctions.loadNews( sources: sources?.id, query: query),
             builder:
                 (BuildContext context, AsyncSnapshot<NewsResponses> snapshot) {
               if (snapshot.hasError)

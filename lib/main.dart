@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         MyHomePage.routeName: (context) => MyHomePage(),
-        CategoryDetails.routeName: (context) => MyHomePage(),
         NewsDescription.routeName : (context) => NewsDescription(),
-
       },
       initialRoute: MyHomePage.routeName,
     );

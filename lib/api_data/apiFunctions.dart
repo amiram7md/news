@@ -31,14 +31,15 @@ class APIFunctions {
       throw Exception('Failed to load Sources');
     }
   }
-  static Future<NewsResponses> loadNews(String? sources , String? searchQuery) async {
+  static Future<NewsResponses> loadNews(
+      {String? sources, String? query}) async {
     var queryParameters = {
       'apiKey' : apiKey ,
       'sources' : sources ,
-      'q' : searchQuery ,
+      'q' : query ,
     };
     var uri = Uri.https('newsapi.org',
-        '/v2/everything', queryParameters
+        '/v2/everything', queryParameters ,
     );
     var response = await http.get(uri);
     var newsResponses =  NewsResponses.fromJson(jsonDecode(response.body));
